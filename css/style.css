@@ -155,7 +155,6 @@ body {
 }
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.438);
-  outline: 2px solid #fff;
 }
 
 @-webkit-keyframes introHeadphones {
@@ -690,6 +689,14 @@ body {
           transform: scale(1.4);
   -webkit-filter: drop-shadow(0px 21px 33px rgba(126, 118, 118, 0.2));
           filter: drop-shadow(0px 21px 33px rgba(126, 118, 118, 0.2));
+}
+@media (max-width: 768px) {
+  .slider .slick-current {
+    -webkit-filter: none;
+            filter: none;
+    -webkit-box-shadow: 0 15px 53px rgba(126, 118, 118, 0.2);
+            box-shadow: 0 15px 53px rgba(126, 118, 118, 0.2);
+  }
 }
 
 .info {
