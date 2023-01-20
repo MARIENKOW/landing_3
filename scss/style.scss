@@ -596,4 +596,83 @@ body{
    }
 }
 
+.product {
+   background-color: #fff;
+   &__inner {
+      color:$color3;
+      padding-bottom: 130px;
+   }
 
+   &__text {
+      text-align: center;
+   }
+
+   &__title {
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      @include adaptiv-value("font-size",44,30, 1)
+   }
+
+   &__subtitle {
+      margin: auto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 560px;
+   }
+
+   &__wrapper {
+      margin-top: 43px;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width:900px) {
+         flex-direction: column;
+         padding: 0px 50px 0px 100px;
+         gap: 40px;
+      }
+      @media (max-width:540px) {
+         padding: 0px 0px 0px 30px;
+      }
+   }
+
+   &__block {
+      flex: 0 1 356px;
+   }
+
+   &__photo {
+      width: 100%;
+      margin-bottom:35px ;
+      @media (max-width:900px) {
+         margin-bottom: 25px;
+      }
+   }
+
+   &__box {
+      padding: 0px 30px 0px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &--top{
+         margin-bottom: 15px;
+      }
+
+   }
+
+   &__rate {
+      font-size: 16px;
+   }
+
+   &__name {
+      font-size: 22px;
+      font-weight: 400;
+      @media (max-width:340px) {
+         font-size: 18px;
+      }
+   }
+
+   &__price {
+      font-weight: 500;
+      font-size: 22px;
+   }
+}
