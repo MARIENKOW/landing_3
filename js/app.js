@@ -12,6 +12,7 @@ $(document).ready(function () {
             autoplaySpeed: 4000,
             touchTreshold: 5,
             centerMode: true,
+            focusOnSelect:true,
             responsive: [
                   {
                   breakpoint: 768,
@@ -38,3 +39,4 @@ function stopScroll(element,clas){
 }
 const burger = document.querySelector(".header__burger");
 burger.addEventListener("click",navigationOpen);
+spoilerFlex();

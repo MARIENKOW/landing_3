@@ -25,6 +25,7 @@ $fontFamily1:'Rubik';
 $color1:#FF4948;
 $color2:#E86564;
 $color3:#180202;
+$color4:#FFF4F4;
 
 $maxWidth: 1920;
 $maxWidthContainer: 1200;
@@ -675,4 +676,224 @@ body{
       font-weight: 500;
       font-size: 22px;
    }
+}
+
+.box {
+   background-color: #fff;
+   &__inner {
+      display: flex;
+      align-items: center;
+      color: $color3;
+   }
+
+   &__photo {
+      width: 60%;
+      img{
+         width: 100%;
+      }
+      @media (max-width:768px) {
+         order: 1;
+         width: 40%;
+         
+      }
+   }
+
+   &__about {
+      width: 40%;
+      @media (max-width:768px) {
+         width: 60%;
+      }
+   }
+
+   &__title {
+      max-width: 400px;
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      @media (max-width:768px) {
+         font-size: 30px;
+      }
+   }
+
+   &__wrapper {
+      max-width: 292px;
+   }
+
+   &__block {
+      &:not(:last-child){
+         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+   }
+
+   &__head {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      cursor: pointer;
+      @media (max-width:768px) {
+         padding: 15px 0px;
+      }
+   }
+
+   &__arrow {
+      aspect-ratio: 1/1;
+      width: 20px;
+      overflow: hidden;
+      margin-right: 20px;
+      transition: .3s;
+      img{
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   ._spoilerOpen{
+      .box__arrow{
+         transform: rotate(90deg);
+      }
+   }
+
+   &__subtitle {
+      font-weight: 400;
+      font-size: 22px;
+      opacity: .7;
+      @media (max-width:768px) {
+         font-size: 18px;
+      }
+   }
+
+   &__text {
+      padding: 0px 20px;
+   }
+}
+
+.subscribe {
+background-color: #fff;
+overflow-x: hidden;
+   &__inner {
+      position: relative;
+      color: $color3;
+      padding: 120px 0px 130px 0px;
+   }
+
+   &__wrapper {
+      max-width: 712px;
+      margin: auto;
+      background-color: $color4;
+      position: relative;
+      z-index: 2;
+      padding: 54px 10px;
+      border-radius: 20px;
+   }
+
+   &__title {
+      text-align: center;
+      font-size: 44px;
+      font-weight: 700;
+      margin: 0px 0px 10px 0px;
+      @media (max-width:500px) {
+         font-size: 30px;
+      }
+   }
+
+   &__subtitle {
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      margin: 0px 0px 36px 0px;
+   }
+   form{
+      display: flex;
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 999px;
+      overflow: hidden;
+      padding: 0px 0px 0px 30px;
+      @media (max-width:500px) {
+         padding: 0px 0px 0px 15px;
+      }
+   }
+   &__write{
+      display: block;
+      flex: 1;
+      padding: 0px 10px 0px 0px;
+      &::placeholder{
+         opacity: .3;
+      }
+      
+   }
+   &__btn{
+      background-color: $color1;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: .2s;
+      &:hover{
+         background-color: rgb(255, 160, 160);
+      }
+      @media (max-width:500px) {
+         font-size: 16px;
+         padding: 15px 20px;
+      }
+   }
+   &__photo{
+      position: absolute;
+      z-index: 1;
+      &--1{
+         top: 90px;
+         animation: subAnimation 11s linear infinite;
+         left: -20px;
+         @media (max-width:768px) {
+            top: 20px;
+            left: -60px;
+         }
+      }
+      &--2{
+         bottom: 150px;
+         left: 100px;
+         animation: subAnimation2 7s linear infinite;
+         z-index: 3;
+         @media (max-width:768px) {
+            bottom: 120px;
+         }
+      }
+      &--3{
+         top: 260px;
+         left: -20px;
+         animation: subAnimation2 15s linear infinite;
+         @media (max-width:768px) {
+            top: 400px;
+            left: 0;
+         }
+      }
+      &--4{
+         right: -30px;
+         top: 220px;
+         animation: subAnimation 12s linear infinite;
+         @media (max-width:768px) {
+            top: 340px;
+         }
+      }
+      &--5{
+         right: 80px;
+         top: 100px;
+         animation: subAnimation2 9s linear infinite;
+         z-index: 3;
+         @media (max-width:768px) {
+            top: 50px;
+         }
+      }
+   }
+}
+@keyframes subAnimation{
+   0%{transform: translateY(0);}
+   60%{transform: translateY(20%);}
+   100%{transform: translateY(0);}
+}
+@keyframes subAnimation2{
+   0%{transform: translateY(0) rotate(0);}
+   60%{transform: translateY(40%) rotate(0deg);}
+   100%{transform: translateY(0) rotate(0);}
 }
