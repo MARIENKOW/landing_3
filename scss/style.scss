@@ -137,6 +137,11 @@ body{
    60%{transform: translateY(20%);}
    100%{transform: translateY(0);}
 }
+@keyframes ProductAnimation{
+   0%{transform: translateY(0);}
+   60%{transform: translateY(-5%);}
+   100%{transform: translateY(0);}
+}
 @keyframes subAnimation2{
    0%{transform: translateY(0) rotate(0);}
    60%{transform: translateY(40%) rotate(0deg);}
@@ -390,6 +395,9 @@ body{
       img{
          height: 20px;
       }
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       aspect-ratio: 1/1;
       width: 50px;
       @media (max-width:768px) {
@@ -641,26 +649,88 @@ body{
          flex-direction: column;
          padding: 0px 50px 0px 100px;
          gap: 40px;
+         margin-top: 63px;
+
       }
       @media (max-width:540px) {
          padding: 0px 0px 0px 30px;
+         margin-top: 43px;
       }
    }
 
    &__block {
       flex: 0 1 356px;
-   }
+      padding: 0px 30px 0px 0px;
+      .green{
+         background-color: #E5FFFB;
+      }
+      .blue{
+         background-color: #E5F1FF;
+      }
 
-   &__photo {
-      width: 100%;
-      margin-bottom:35px ;
-      @media (max-width:900px) {
-         margin-bottom: 25px;
+   }
+   &__in{
+      padding: 60px 0px 0px 0px;
+      &:hover{
+         .product__img{
+            animation: ProductAnimation 2s linear infinite;
+         }
       }
    }
 
+   &__photo {
+      display: inline-block;
+      width: 100%;
+      margin-bottom:35px ;
+      aspect-ratio: 1/1;
+      background-color:#FFE5EE;
+      border-radius: 30px;
+      position: relative;
+      cursor: auto;
+      @media (max-width:900px) {
+         margin-bottom: 25px;
+      }
+      input{
+         &:checked{
+            & + label{
+               background-color: #fff;
+               border-color: #1802026e;
+            }
+         }
+      }
+   }
+   &__img{
+      padding: 0px 0px 25px 25px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width:86%;
+      transition: .2s;
+   }
+   &__basIn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 68px;
+      height: 68px;
+      border-radius: 99px;
+      border: 6px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:#FFE5EE;
+      transform: translate3d(calc(50% - 5px),calc(-50% + 5px),0);
+      cursor: pointer;
+      transition: .2s;
+      &:hover{
+         background-color: #fff5f8;
+      }
+      img{
+         width: 31px;
+         height: 31px;
+      }
+   }
    &__box {
-      padding: 0px 30px 0px 0px;
       display: flex;
       justify-content: space-between;
       align-items: center;
